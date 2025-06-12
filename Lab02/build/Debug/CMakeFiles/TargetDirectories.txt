@@ -1,0 +1,6 @@
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab02/build/Debug/CMakeFiles/Lab02.dir
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab02/build/Debug/CMakeFiles/edit_cache.dir
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab02/build/Debug/CMakeFiles/rebuild_cache.dir
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab02/build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab02/build/Debug/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab02/build/Debug/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
