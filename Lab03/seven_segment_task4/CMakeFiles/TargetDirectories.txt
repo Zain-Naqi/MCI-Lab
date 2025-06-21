@@ -1,0 +1,6 @@
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab03/seven_segment_task4/CMakeFiles/seven_segment_task4.dir
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab03/seven_segment_task4/CMakeFiles/edit_cache.dir
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab03/seven_segment_task4/CMakeFiles/rebuild_cache.dir
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab03/seven_segment_task4/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab03/seven_segment_task4/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+/home/zain-naqi/Pictures/Tehqiq-1/MCI-Lab/Lab03/seven_segment_task4/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
