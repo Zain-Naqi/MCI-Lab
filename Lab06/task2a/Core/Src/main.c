@@ -125,7 +125,7 @@ int main(void)
 
   float frequency = 0;
   if (captured_ticks != 0)
-    frequency = 666666.0f / captured_ticks;
+    frequency = 1000000.0f / captured_ticks;
 
   snprintf(msg, sizeof(msg), "Frequency = %.2f Hz\r\n", frequency);
   HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
@@ -201,7 +201,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 47;
+  htim2.Init.Prescaler = 71;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 99;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
