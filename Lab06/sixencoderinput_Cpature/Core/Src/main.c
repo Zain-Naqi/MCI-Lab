@@ -117,7 +117,7 @@ int main(void)
     {
     if (Frequency > 0)
         {
-          RPM = (Frequency / 112.0f) * 60.0f;
+          RPM = (Frequency / 360.0f) * 60.0f;
         snprintf(msg, sizeof(msg), "Frequency = %.2f Hz, RPM = %.2f\r\n", Frequency, RPM);
         HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
         Frequency = 0; // Clear to avoid re-printing same data
