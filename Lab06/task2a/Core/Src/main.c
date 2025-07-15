@@ -48,6 +48,7 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 char msg[50];
+float RPM = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -127,9 +128,10 @@ int main(void)
   if (captured_ticks != 0)
     frequency = 1000000.0f / captured_ticks;
 
-  snprintf(msg, sizeof(msg), "Frequency = %.2f Hz\r\n", frequency);
+  RPM = (frequency / 360.0f) * 60.0f;
+  snprintf(msg, sizeof(msg), "Frequency = %.2f Hz, RPM = %.2f\r\n", frequency, RPM);
   HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-}
+
 
   /* USER CODE END 3 */
 }
@@ -259,7 +261,7 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 71;
+  htim3.Init.Prescaler = 47;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim3.Init.Period = 65535;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
