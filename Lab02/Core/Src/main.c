@@ -18,13 +18,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include <string.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#define ROWS 3
-#define COLS 3
+#include <string.h>
+#include "stdio.h"     // For standard I/O functions like vsnprintf
+#include "stdarg.h"    // For variable argument handling (va_list, va_start, etc.)
 
 /* USER CODE END Includes */
 
@@ -35,6 +35,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
+#define ROWS 3
+#define COLS 3
 
 /* USER CODE END PD */
 
@@ -107,44 +110,40 @@ int main(void)
   MX_USB_PCD_Init();
   /* USER CODE BEGIN 2 */
 
-  // TASK # 01 (Proving the famous identity: (a + b)^2 = a^2 + 2ab + b^2):
+  // TASK # 02 (Proving the famous identity: (a + b)^2 = a^2 + 2ab + b^2):
   HAL_Delay(5000); // Putting a delay in the start to let us open the terminal before program starts
-  char Task1[] = "TASK # 01: Proving the Sum of Squares Identity\r\n";
-  HAL_UART_Transmit(&huart2, (uint8_t*)Task1, strlen(Task1), HAL_MAX_DELAY);
+  myPrintf("TASK # 02:\r\n");
   int result = Square_of_a_Sum(3, 7); // Calling the function defined below
 
   // Converting the integer result to a string for transmission through UART
   char result_as_string[20]; 
   sprintf(result_as_string, "%d\r\n", result);
 
-  HAL_UART_Transmit(&huart2, (uint8_t*)result_as_string, strlen(result_as_string), HAL_MAX_DELAY);
-
-  // TASK # 02:
-  HAL_Delay(2000);
-  char Task2[] = "\r\nTASK # 02: Encryption and Decryption of a String\r\n";
-  HAL_UART_Transmit(&huart2, (uint8_t*)Task2, strlen(Task2), HAL_MAX_DELAY);
-
-  char key[] = "zn09224";
-  char text[] = "This is the DISCOVERY series of STM32!";
-  char e[] = "\r\nEncrypting...\r\n";
-  char d[] = "\r\nDecrypting...\r\n";
-
-  // Encrypting the text
-  HAL_UART_Transmit(&huart2, (uint8_t*)e, strlen(e), HAL_MAX_DELAY);
-  HAL_Delay(2000);
-  XOR_Encryption_Decryption(text, key);
-  HAL_UART_Transmit(&huart2, (uint8_t*)text, strlen(text), HAL_MAX_DELAY);
-
-  // Decrypting the text encrypted above 
-  HAL_UART_Transmit(&huart2, (uint8_t*)d, strlen(d), HAL_MAX_DELAY);
-  HAL_Delay(2000);
-  XOR_Encryption_Decryption(text, key);
-  HAL_UART_Transmit(&huart2, (uint8_t*)text, strlen(text), HAL_MAX_DELAY);
+  myPrintf(result_as_string);
 
   // TASK # 03:
   HAL_Delay(2000);
-  char Task3[] = "\r\nTASK # 03: Matrix Multiplication\r\n";
-  HAL_UART_Transmit(&huart2, (uint8_t*)Task3, strlen(Task3), HAL_MAX_DELAY);
+  myPrintf("\r\nTASK # 03: Encryption and Decryption of a String\r\n"); 
+  
+
+  char key[] = "zn09224";
+  char text[] = "This is the DISCOVERY series of STM32!";
+
+  // Encrypting the text
+  myPrintf("\r\nEncrypting...\r\n");
+  HAL_Delay(2000);
+  XOR_Encryption_Decryption(text, key);
+  myPrintf(text);
+
+  // Decrypting the text encrypted above 
+  myPrintf("\r\nDecrypting...\r\n");
+  HAL_Delay(2000);
+  XOR_Encryption_Decryption(text, key);
+  myPrintf(text);
+
+  // TASK # 04:
+  HAL_Delay(2000);
+  myPrintf("\r\nTASK # 04: Matrix Multiplication\r\n");
 
   // Initializing two 3 x 3 square matrices
   int matrix_left[ROWS][COLS] = {
@@ -168,10 +167,9 @@ int main(void)
   HAL_Delay(2000);
   Print_Matrix("Resultant Matrix", ROWS, COLS, resultingMatrix);
 
-  // TASK # 04:
+  // TASK # 05:
   HAL_Delay(2000);
-  char Task4[] = "\r\nTASK # 04: Finding Armstrong Numbers\r\n";
-  HAL_UART_Transmit(&huart2, (uint8_t*)Task4, strlen(Task4), HAL_MAX_DELAY);
+  myPrintf("\r\nTASK # 05: Finding Armstrong Numbers\r\n");
 
   int armstrong_numbers[2]; // An array to store the two armstrong numbers
   Two_Armstrong_Numbers(armstrong_numbers); // Function call to find the first two armstrong numbers in the range
@@ -181,7 +179,7 @@ int main(void)
   sprintf(result_to_string, "%d, %d\r\n", armstrong_numbers[0], armstrong_numbers[1]);
 
   // Printing the resulting string
-  HAL_UART_Transmit(&huart2, (uint8_t*)result_to_string, strlen(result_to_string), HAL_MAX_DELAY);
+  myPrintf(result_to_string);
 
 
 
@@ -197,6 +195,33 @@ int main(void)
   }
   /* USER CODE END 3 */
 }
+
+// Task 01:
+// Custom printf-like function that sends formatted strings over UART
+void myPrintf(const char *fmt, ...) {
+    char buffer[256];  // A temporary buffer to store the formatted string
+                       // Increase size if you expect longer messages
+
+    va_list args;                // Declare a variable to hold the variable arguments
+    va_start(args, fmt);        // Initialize the va_list to retrieve the arguments after 'fmt'
+
+    // Format the string using vsnprintf:
+    // - fmt is the format string (like "Temp: %d\n")
+    // - args is the list of additional arguments
+    // - buffer is where the final formatted string is written
+    // - sizeof(buffer) prevents buffer overflow
+    vsnprintf(buffer, sizeof(buffer), fmt, args);
+
+    va_end(args);               // Clean up the va_list when done
+
+    // Transmit the formatted string over UART using HAL
+    // - &huart2: the UART handle (you can change this to another UART)
+    // - (uint8_t*)buffer: cast the char* to uint8_t* as required by HAL
+    // - strlen(buffer): number of bytes to transmit (excluding null terminator)
+    // - HAL_MAX_DELAY: wait indefinitely until transmission is complete
+    HAL_UART_Transmit(&huart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+}
+
 
 int Square_of_a_Sum(int a, int b) 
 {
@@ -237,11 +262,11 @@ void Matrix_Multiplication(int A[ROWS][COLS], int B[ROWS][COLS], int result[ROWS
 
 void Print_Matrix(const char* name, int rows, int cols, int matrix[rows][cols]) {
   
-  char buffer[128];
+  char buffer[256];
 
   // Print matrix name
   sprintf(buffer, "%s:\r\n", name);
-  HAL_UART_Transmit(&huart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+  myPrintf(buffer);
 
   // Print each row
   for (int i = 0; i < rows; i++) {
@@ -252,11 +277,11 @@ void Print_Matrix(const char* name, int rows, int cols, int matrix[rows][cols]) 
           strcat(buffer, temp);
       }
       strcat(buffer, "\r\n");
-      HAL_UART_Transmit(&huart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+      myPrintf(buffer);
   }
 
   // Add newline between matrices
-  HAL_UART_Transmit(&huart2, (uint8_t*)"\r\n", 1, HAL_MAX_DELAY);
+  myPrintf("\r\n");
 
 }
 
