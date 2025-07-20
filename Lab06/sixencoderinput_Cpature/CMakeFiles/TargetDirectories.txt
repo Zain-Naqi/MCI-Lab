@@ -1,0 +1,7 @@
+/home/maniya/Desktop/sixencoderinput_Cpature/CMakeFiles/sixencoderinput_Cpature.dir
+/home/maniya/Desktop/sixencoderinput_Cpature/CMakeFiles/edit_cache.dir
+/home/maniya/Desktop/sixencoderinput_Cpature/CMakeFiles/rebuild_cache.dir
+/home/maniya/Desktop/sixencoderinput_Cpature/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+/home/maniya/Desktop/sixencoderinput_Cpature/cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir
+/home/maniya/Desktop/sixencoderinput_Cpature/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+/home/maniya/Desktop/sixencoderinput_Cpature/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
