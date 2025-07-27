@@ -1,0 +1,7 @@
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab08/Task01/CMakeFiles/Task01.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab08/Task01/CMakeFiles/edit_cache.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab08/Task01/CMakeFiles/rebuild_cache.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab08/Task01/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab08/Task01/cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab08/Task01/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab08/Task01/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
