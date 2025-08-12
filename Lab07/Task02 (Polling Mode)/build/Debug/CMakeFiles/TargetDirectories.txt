@@ -1,0 +1,7 @@
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab07Update/Task02_PollingMode/build/Debug/CMakeFiles/Task02_PollingMode.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab07Update/Task02_PollingMode/build/Debug/CMakeFiles/edit_cache.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab07Update/Task02_PollingMode/build/Debug/CMakeFiles/rebuild_cache.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab07Update/Task02_PollingMode/build/Debug/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab07Update/Task02_PollingMode/build/Debug/cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab07Update/Task02_PollingMode/build/Debug/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+/media/zain-naqi/5C182024181FFBA0/Tehqiq-1/MCI-Lab/Lab07Update/Task02_PollingMode/build/Debug/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
