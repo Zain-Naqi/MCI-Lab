@@ -1,0 +1,6 @@
+/home/maniya/Desktop/project/CMakeFiles/project.dir
+/home/maniya/Desktop/project/CMakeFiles/edit_cache.dir
+/home/maniya/Desktop/project/CMakeFiles/rebuild_cache.dir
+/home/maniya/Desktop/project/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+/home/maniya/Desktop/project/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+/home/maniya/Desktop/project/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
